@@ -1,26 +1,28 @@
-import React from "react";
+import React from 'react'
 
-export default function UserItem() {
+export default function UserItem({ _id, firstname, lastname, email, age, city, username }) {
+  console.log(firstname)
   return (
-    <div class="uesrs__item">
-      <div class="users__info">
+    <div className="uesrs__item">
+      <div className="users__info">
         <img
           src="../../img/admin/profile/banana.png"
           alt="photo user"
-          class="users__img"
+          className="users__img"
         />
-        <div class="users__details">
-          <p class="users__name my-0">محمدامین سعیدی راد</p>
-          <p lang="en" class="users__email">
-            ce01010101it@gmail.com
+        <div className="users__details">
+          <p className="users__name my-0">{firstname} {lastname}</p>
+          <p lang="en" className="users__email">
+            {/* ce01010101it@gmail.com */}
+            {email}
           </p>
         </div>
       </div>
-      <div class="users__btns">
-        <button class="btn-custome btn-custome--gray">پیام ها</button>
-        <button class="btn-custome btn-custome__blue">اطلاعات</button>
-        <button class="btn-custome btn-custome__red">حذف</button>
+      <div className="users__btns">
+        <button className="btn-custome btn-custome--gray">پیام ها</button>
+        <button className="btn-custome btn-custome__blue">اطلاعات</button>
+        <button className="btn-custome btn-custome__red">حذف</button>
       </div>
     </div>
-  );
+  )
 }
