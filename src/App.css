@@ -479,6 +479,7 @@ body {
   background-color: var(--white);
   box-shadow: var(--shadow);
   height: 58rem;
+  height: auto;
 }
 
 .content__wrapper {

@@ -17,6 +17,7 @@
   display: flex;
   margin-bottom: 2rem;
   position: relative;
+  margin-top: 30px;
 }
 
 .product__teg-text {
@@ -33,6 +34,7 @@
   font-size: 1.7rem;
   font-weight: bold;
 }
+
 .products__short-desc {
   color: grey;
   font-size: 1.4rem;
@@ -139,6 +141,7 @@
 .dark .products__img {
   filter: brightness(60%);
 }
+
 .dark .products__item:hover .products__img {
   filter: brightness(100%);
 }
@@ -146,4 +149,22 @@
 .dark .tags-box {
   border: 1px solid var(--white-low-opacity);
 }
+
 /* END DARK MODE */
+
+
+.products-wrapper {
+  height: 500px;
+  overflow-y: auto;
+
+}
+
+.products-box-info{
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.products__price-box{
+  margin-right: 12px;
+}
