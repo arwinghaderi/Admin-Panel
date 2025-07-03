@@ -31,11 +31,9 @@
   --golden-border: 1px solid #f6df00;
 
   /* gradients */
-  --blue-to-black-gradient: linear-gradient(
-    to bottom,
-    rgba(42, 78, 92, 0.3) 30%,
-    black 100%
-  );
+  --blue-to-black-gradient: linear-gradient(to bottom,
+      rgba(42, 78, 92, 0.3) 30%,
+      black 100%);
 
   /* shadow */
   --shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
@@ -206,6 +204,7 @@ body {
   align-items: center;
   gap: 1.5rem;
 }
+
 .content-message__username,
 .content-message__adminname {
   font-weight: bold;
@@ -224,6 +223,7 @@ body {
   font-size: 1.2rem;
   position: relative;
 }
+
 .content-message__text-user::before,
 .content-message__text-admin::before {
   content: "";
@@ -238,6 +238,7 @@ body {
   left: -0.8rem;
   clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
+
 .content-message__text-admin::before {
   background-color: var(--secondry-primary);
   right: -0.7rem;
@@ -281,6 +282,7 @@ body {
   cursor: pointer;
   transition: all 0.4s;
 }
+
 .list-contact__item:hover {
   background-color: var(--secondry);
 }
@@ -351,7 +353,7 @@ body {
   transition: transform 0.4s;
 }
 
-.form__input:placeholder-shown + .form__label {
+.form__input:placeholder-shown+.form__label {
   transform: translateY(-4rem);
   opacity: 0;
   visibility: hidden;
@@ -373,6 +375,7 @@ body {
   top: 25%;
   margin-top: 0.5rem;
 }
+
 .form__icon-password {
   cursor: pointer;
   left: 2%;
@@ -454,6 +457,11 @@ body {
   position: relative;
 }
 
+.swal-footer {
+  display: flex;
+  justify-content: center;
+}
+
 .header__alert-count {
   display: inline-block;
   padding: 0 0.5rem;
@@ -519,6 +527,7 @@ body {
   height: 2.5rem;
   fill: currentColor;
 }
+
 /* End Content Layout */
 
 /* Main Layout */
@@ -526,6 +535,7 @@ body {
   margin: 8rem 0;
   height: 58rem;
 }
+
 /* End Main Layout */
 
 /* Sidebar */
@@ -605,6 +615,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .sidebar__profile::before {
   content: "";
   position: absolute;
@@ -628,6 +639,7 @@ body {
   justify-content: center;
   gap: 1rem;
 }
+
 /* End Sidebar */
 
 /* Dark Mode */
@@ -717,24 +729,28 @@ body {
   }
 }
 
+
 @font-face {
   font-family: "koodak";
   src: url("./fonts/KoodakBold.eot?#") format("eot"),
     url("./fonts/KoodakBold.ttf") format("truetype"),
     url("./fonts/KoodakBold.woff") format("woff");
 }
+
 @font-face {
   font-family: "yekan";
   src: url("./fonts/Yekan.eot?#") format("eot"),
     url("./fonts/Yekan.ttf") format("truetype"),
     url("./fonts/Yekan.woff") format("woff");
 }
+
 @font-face {
   font-family: "nazanin";
   src: url("./fonts/Nazanin.eot") format("eot"),
     url("./fonts/Nazanin.ttf") format("truetype"),
     url("./fonts/Nazanin.woff") format("woff");
 }
+
 @font-face {
   font-family: "gandom";
   src: url("./fonts/Gandom.eot") format("eot"),

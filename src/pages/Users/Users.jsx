@@ -9,7 +9,6 @@ import { getUsersFromServer } from '../../Redux/store/users'
 export default function Users() {
   const users =
     useSelector((state) => {
-      console.log(state)
       return state?.users
     }) || []
   const dispatch = useDispatch()
@@ -18,7 +17,6 @@ export default function Users() {
     dispatch(getUsersFromServer(`https://redux-cms.iran.liara.run/api/users`))
   }, [dispatch])
 
-  console.log(users)
   return (
     <div className="col-8 content px-0">
       <div className="content__wrapper">

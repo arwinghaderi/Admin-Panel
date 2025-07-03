@@ -10,6 +10,21 @@ export const getUsersFromServer = createAsyncThunk(
   }
 )
 
+export const removeUserFromServer = createAsyncThunk(
+  'users/removeUserFromServer',
+  async (id) => {
+    const res = await fetch(
+      `https://redux-cms.iran.liara.run/api/users/${id}`,
+      {
+        method: 'DELETE',
+      }
+    )
+    const data = await res.json()
+
+    return data
+  }
+)
+
 const userSlice = createSlice({
   name: 'users',
   initialState: [],
@@ -17,6 +32,11 @@ const userSlice = createSlice({
   extraReducers: {
     [getUsersFromServer.fulfilled]: (_, action) => {
       return action.payload
+    },
+    [removeUserFromServer.fulfilled]: (state, action) => {
+      const newUser = state.filter((user) => user._id !== action.payload.id)
+
+      return newUser
     },
   },
 })
