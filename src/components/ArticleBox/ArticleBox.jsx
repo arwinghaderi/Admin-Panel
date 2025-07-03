@@ -1,20 +1,12 @@
-import React from "react";
+import React from 'react'
 
-export default function ArticleBox() {
+export default function ArticleBox({ _id, title, desc, category, views }) {
   return (
     <div class="articles__item">
-      <img
-        src="../../img/store/products/product-img-1.jpg"
-        alt="product-img-1"
-        class="articles__img"
-      />
       <div class="articles__details w-100">
         <div class="articles__info">
-          <h3 class="articles__name">دوره متخصص ریداکس</h3>
-          <p class="articles__short-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            ullam voluptates impedit incidunt
-          </p>
+          <h3 class="articles__name">{title} </h3>
+          <p class="articles__short-desc">{desc}</p>
         </div>
         <div class="articles__tags">
           <div class="articles__boxes">
@@ -22,14 +14,14 @@ export default function ArticleBox() {
               <span class="fa fa-tags"></span>
               <p class="articles__tag-text articles__category my-0">
                 <span>دسته بندی :</span>
-                <span class="articles__category-value">فرانت‌اند</span>
+                <span class="articles__category-value">{category}</span>
               </p>
             </div>
             <div class="articles__visited-box d-flex gap-2 align-items-center">
               <span class="fa fa-users"></span>
               <p class="articles__tag-text articles__visited my-0">
                 <span>تعداد بازدید :</span>
-                <span class="articles__visited-count">23</span>
+                <span class="articles__visited-count">{views}</span>
               </p>
             </div>
           </div>
@@ -40,5 +32,5 @@ export default function ArticleBox() {
         </div>
       </div>
     </div>
-  );
+  )
 }

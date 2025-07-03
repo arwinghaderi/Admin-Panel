@@ -1,10 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ArticleBox from "./../../components/ArticleBox/ArticleBox";
+import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import ArticleBox from './../../components/ArticleBox/ArticleBox'
 
-import "./Articles.css";
+import './Articles.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { getArticlesFromServer } from '../../Redux/store/Articles'
 
 export default function Articles() {
+  const articles = useSelector((state) => state.articles)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(
+      getArticlesFromServer(`https://redux-cms.iran.liara.run/api/articles`)
+    )
+  }, [])
+
+  console.log(articles)
+
   return (
     <div class="col-8 content px-0">
       <div class="content__wrapper d-flex flex-column align-content-between">
@@ -38,8 +51,11 @@ export default function Articles() {
 
         <div class="articles">
           <div class="articles__list">
-            <ArticleBox />
-            <ArticleBox />
+            {articles && articles?.length > 0
+              ? articles?.map((article) => (
+                  <ArticleBox key={article._id} {...article} />
+                ))
+              : 'مقاله‌ای موجود نیست'}
           </div>
         </div>
 
@@ -55,5 +71,5 @@ export default function Articles() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -77,7 +77,7 @@ export default function Users() {
 
           <div className="users__list-container">
             <div className="users__list users__list-wrapper">
-              {users[0]?.map((user) => (
+              {users?.map((user) => (
                 <UserItem key={user?._id} {...user} />
               ))}
             </div>

@@ -4,9 +4,9 @@ export const getingCoursesFromServer = createAsyncThunk(
   'getingCoursesFromServer/courses',
   async (url) => {
     const res = await fetch(url)
-      const data = await res.json()
-      
-      return data
+    const data = await res.json()
+
+    return data
   }
 )
 
@@ -15,9 +15,8 @@ const coursesSlice = createSlice({
   initialState: [],
   reducers: {},
   extraReducers: {
-    [getingCoursesFromServer.fulfilled]: (state, action) => {
-      console.log('action courses', action)
-      state.push(action.payload)
+    [getingCoursesFromServer.fulfilled]: (_, action) => {
+      return action.payload
     },
   },
 })

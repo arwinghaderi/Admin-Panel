@@ -15,8 +15,8 @@ const userSlice = createSlice({
   initialState: [],
   reducers: {},
   extraReducers: {
-    [getUsersFromServer.fulfilled]: (state, action) => {
-      state.push(action.payload)
+    [getUsersFromServer.fulfilled]: (_, action) => {
+      return action.payload
     },
   },
 })
