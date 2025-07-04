@@ -9,7 +9,7 @@ import { getingCoursesFromServer } from '../../Redux/store/courses'
 export default function Courses() {
   const courses =
     useSelector((state) => {
-      console.log(state)
+      console.log('state courses', state)
       return state?.courses
     }) || []
   const dispatch = useDispatch()
@@ -20,7 +20,7 @@ export default function Courses() {
     )
   }, [])
 
-  console.log(courses)
+  console.log('courses', courses)
   return (
     <div class="col-8 content px-0">
       <div class="content__wrapper d-flex flex-column align-content-between">

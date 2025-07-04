@@ -1,6 +1,9 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { removeCourseFromServer } from '../../Redux/store/courses'
 
 export default function CourseBox({
+  _id,
   category,
   desc,
   discount,
@@ -8,6 +11,27 @@ export default function CourseBox({
   registersCount,
   title,
 }) {
+  const dispatch = useDispatch()
+  console.log(_id)
+
+  const removeCoureseHandler = () => {
+    swal({
+      title: 'آیا از حذف مطمئن هستید؟',
+      icon: 'warning',
+      buttons: ['نه', 'آره'],
+    }).then((result) => {
+      if (result) {
+        dispatch(removeCourseFromServer(_id))
+
+        swal({
+          title: 'دوره ی مورد نظر با موفقیت حذف شد',
+          icon: 'success',
+          button: 'اوکی',
+        })
+      }
+    })
+  }
+
   return (
     <div class="products__item">
       <div class="products__details w-100">
@@ -44,7 +68,12 @@ export default function CourseBox({
             </div>
           </div>
           <div class="products__btns">
-            <button class="btn btn-danger btn-lg">حذف</button>
+            <button
+              class="btn btn-danger btn-lg"
+              onClick={removeCoureseHandler}
+            >
+              حذف
+            </button>
             <button class="btn btn-info btn-lg">ویرایش</button>
           </div>
         </div>
