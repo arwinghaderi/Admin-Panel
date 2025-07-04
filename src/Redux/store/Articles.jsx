@@ -9,14 +9,36 @@ export const getArticlesFromServer = createAsyncThunk(
   }
 )
 
+export const removeArticlesFromServer = createAsyncThunk(
+  'removeArticlesFromServer/articles',
+  async (id) => {
+    const res = await fetch(
+      `https://redux-cms.iran.liara.run/api/articles/${id}`,
+      {
+        method: 'DELETE',
+      }
+    )
+    const data = await res.json()
+    return data
+  }
+)
+
 const articlesSlice = createSlice({
   name: 'articles',
   initialState: [],
   reducers: {},
-  extraReducers: {
-    [getArticlesFromServer.fulfilled]: (_, action) => {
+  extraReducers: (builder) => {
+    builder.addCase(getArticlesFromServer.fulfilled, (_, action) => {
       return action.payload
-    },
+    })
+
+    builder.addCase(removeArticlesFromServer.fulfilled, (state, action) => {
+      const newArticles = state.filter(
+        (article) => article._id !== action.payload.id
+      )
+
+      return newArticles
+    })
   },
 })
 
