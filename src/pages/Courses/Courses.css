@@ -156,15 +156,15 @@
 .products-wrapper {
   height: 500px;
   overflow-y: auto;
-
+  width: 100%;
 }
 
-.products-box-info{
+.products-box-info {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.products__price-box{
+.products__price-box {
   margin-right: 12px;
 }

@@ -500,7 +500,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+  gap: 3rem;
   padding: 2rem;
   border-bottom: 1px solid var(--white-700);
   height: 11.5%;
@@ -756,4 +756,22 @@ body {
   src: url("./fonts/Gandom.eot") format("eot"),
     url("./fonts/Gandom.ttf") format("truetype"),
     url("./fonts/Gandom.woff") format("woff");
+}
+
+.show-modal {
+  display: block;
+}
+
+.products__btns {
+  display: flex;
+  gap: 4px;
+  margin-left: 6px;
+}
+
+.content__tab-link-active {
+  text-decoration: none;
+  color: var(--blue) !important;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }

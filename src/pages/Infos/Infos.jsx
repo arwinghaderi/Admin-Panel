@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import './Infos.css'
 
@@ -9,31 +9,53 @@ export default function Infos() {
       <div className="content__wrapper">
         <ul className="content__tabs">
           <li className="content__tab">
-            <Link to="/users" className="content__tab-link">
+            <NavLink
+              to="/users"
+              className={({ isActive }) =>
+                isActive ? 'content__tab-link-active' : 'content__tab-link'
+              }
+            >
               <span className="fa fa-user"></span>
               کاربران
-            </Link>
+            </NavLink>
           </li>
+
           <li className="content__tab">
-            <Link to="/infos" className="content__tab-link">
+            <NavLink
+              to="/infos"
+              className={({ isActive }) =>
+                isActive ? 'content__tab-link-active' : 'content__tab-link'
+              }
+            >
               <span className="fa fa-book"></span>
               اطلاعات
-            </Link>
+            </NavLink>
           </li>
+
           <li className="content__tab">
-            <Link to="/courses" className="content__tab-link">
+            <NavLink
+              to="/courses"
+              className={({ isActive }) =>
+                isActive ? 'content__tab-link-active' : 'content__tab-link'
+              }
+            >
               <span className="fa fa-store"></span>
               دوره‌ها
-            </Link>
+            </NavLink>
           </li>
+
           <li className="content__tab">
-            <Link to="/articles" className="content__tab-link">
+            <NavLink
+              to="/articles"
+              className={({ isActive }) =>
+                isActive ? 'content__tab-link-active' : 'content__tab-link'
+              }
+            >
               <span className="fa fa-newspaper"></span>
               وبلاگ
-            </Link>
+            </NavLink>
           </li>
         </ul>
-        <div className="active"></div>
         <div className="information">
           <div id="accordion">
             <div className="card">
