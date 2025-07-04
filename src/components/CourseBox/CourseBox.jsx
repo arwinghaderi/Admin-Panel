@@ -185,7 +185,7 @@ export default function CourseBox({
             </div>
           </div>
         </div>
-        <div className="product__discount-Box">30%</div>
+        <div className="product__discount-Box">{discount}%</div>
       </div>
     </>
   )

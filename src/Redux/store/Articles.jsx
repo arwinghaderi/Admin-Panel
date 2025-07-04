@@ -61,10 +61,7 @@ const articlesSlice = createSlice({
       return action.payload
     })
 
-    builder.addCase(createArticlesFromServer.fulfilled, (state, action) => {
-      console.log('action articles', action)
-      state.push(action.meta.arg)
-    })
+  
 
     builder.addCase(removeArticlesFromServer.fulfilled, (state, action) => {
       return state.filter((article) => article._id !== action.payload.id)

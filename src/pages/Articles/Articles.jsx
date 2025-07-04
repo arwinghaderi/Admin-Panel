@@ -28,9 +28,7 @@ export default function Articles() {
   }
 
   useEffect(() => {
-    dispatch(
-      getArticlesFromServer(`https://redux-cms.iran.liara.run/api/articles`)
-    )
+    dispatch(getArticlesFromServer(`https://redux-cms.iran.liara.run/api/articles`))
   }, [dispatch])
 
   const handleCreateArticle = () => {
@@ -48,9 +46,7 @@ export default function Articles() {
     }
 
     dispatch(createArticlesFromServer(formData)).then(() => {
-      dispatch(
-        getArticlesFromServer(`https://redux-cms.iran.liara.run/api/articles`)
-      )
+      dispatch(getArticlesFromServer(`https://redux-cms.iran.liara.run/api/articles`))
     })
 
     setIsShowModal(false)
@@ -191,17 +187,6 @@ export default function Articles() {
               </NavLink>
             </li>
           </ul>
-
-          <div className="articles">
-            <div className="articles__list">
-              {articles && articles.length > 0
-                ? articles.map((article) => (
-                    <ArticleBox key={article._id} {...article} />
-                  ))
-                : 'مقاله‌ای موجود نیست'}
-            </div>
-          </div>
-
           <div className="new-article">
             <button
               className="btn-custome btn-custome__blue"
@@ -210,6 +195,15 @@ export default function Articles() {
             >
               افزودن مقاله جدید
             </button>
+          </div>
+          <div className="articles">
+            <div className="articles__list">
+              {articles && articles.length > 0
+                ? articles.map((article) => (
+                    <ArticleBox key={article._id} {...article} />
+                  ))
+                : 'مقاله‌ای موجود نیست'}
+            </div>
           </div>
         </div>
       </div>

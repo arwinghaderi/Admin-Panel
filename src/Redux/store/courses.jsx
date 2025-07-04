@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import Swal from 'sweetalert2'
 
 export const getingCoursesFromServer = createAsyncThunk(
   'getingCoursesFromServer/courses',
@@ -21,6 +22,34 @@ export const removeCourseFromServer = createAsyncThunk(
     )
     const data = await res.json()
 
+    return data
+  }
+)
+
+export const createCourseFromServer = createAsyncThunk(
+  'course/createcourseFromServer',
+  async (courseData) => {
+    const res = await fetch('https://redux-cms.iran.liara.run/api/courses', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(courseData),
+    })
+
+    if (!res.ok) {
+      throw new Error('خطا در ایجاد  دوره')
+    }
+    if (res.ok) {
+      Swal.fire({
+        icon: 'success',
+        title: 'موفق!',
+        text: 'دوره  با موفقیت ثبت شد.',
+        confirmButtonText: 'خیلی خب',
+      })
+    }
+
+    const data = await res.json()
     return data
   }
 )

@@ -25,6 +25,8 @@ export const removeUserFromServer = createAsyncThunk(
   }
 )
 
+
+
 const userSlice = createSlice({
   name: 'users',
   initialState: [],
