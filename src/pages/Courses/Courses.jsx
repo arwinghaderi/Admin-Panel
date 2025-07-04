@@ -41,17 +41,7 @@ export default function Courses() {
             </NavLink>
           </li>
 
-          <li className="content__tab">
-            <NavLink
-              to="/infos"
-              className={({ isActive }) =>
-                isActive ? 'content__tab-link-active' : 'content__tab-link'
-              }
-            >
-              <span className="fa fa-book"></span>
-              اطلاعات
-            </NavLink>
-          </li>
+       
 
           <li className="content__tab">
             <NavLink

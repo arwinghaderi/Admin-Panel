@@ -39,18 +39,6 @@ export default function Users() {
 
           <li className="content__tab">
             <NavLink
-              to="/infos"
-              className={({ isActive }) =>
-                isActive ? 'content__tab-link-active' : 'content__tab-link'
-              }
-            >
-              <span className="fa fa-book"></span>
-              اطلاعات
-            </NavLink>
-          </li>
-
-          <li className="content__tab">
-            <NavLink
               to="/courses"
               className={({ isActive }) =>
                 isActive ? 'content__tab-link-active' : 'content__tab-link'

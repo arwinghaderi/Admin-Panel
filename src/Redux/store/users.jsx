@@ -29,15 +29,16 @@ const userSlice = createSlice({
   name: 'users',
   initialState: [],
   reducers: {},
-  extraReducers: {
-    [getUsersFromServer.fulfilled]: (_, action) => {
+  extraReducers: (builder) => {
+    builder.addCase(getUsersFromServer.fulfilled, (_, action) => {
       return action.payload
-    },
-    [removeUserFromServer.fulfilled]: (state, action) => {
+    })
+
+    builder.addCase(removeUserFromServer.fulfilled, (_, action) => {
       const newUser = state.filter((user) => user._id !== action.payload.id)
 
       return newUser
-    },
+    })
   },
 })
 

@@ -308,6 +308,8 @@ body {
 
 .form__box-input {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .information .form__box-input {

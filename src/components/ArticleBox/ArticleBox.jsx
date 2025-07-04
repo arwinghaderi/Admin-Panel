@@ -28,72 +28,72 @@ export default function ArticleBox({ _id, title, desc, category, views }) {
     <>
       {/* modal */}
       <div
-        className={`modal ${isShowModal ? 'show-modal' : null}`}
+        className={`modal ${isShowModal ? 'show-modal' : ''}`}
         id="show-info-modal"
       >
-        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">جزئیات</h4>
+        <div className="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h4 className="modal-title">جزئیات</h4>
             </div>
 
-            <div class="modal-body position-relative">
-              <form action="#" class="form row mx-0">
-                <div class="form__box-input col-12 px-2">
-                  <span class="fa fa-user form__icon icon-name-article"></span>
+            <div className="modal-body position-relative">
+              <form action="#" className="form row mx-0">
+                <div className="form__box-input col-12 px-2">
+                  <span className="fa fa-user form__icon icon-name-article"></span>
                   <input
                     type="text"
                     name=""
                     id="firstname"
                     value={`عنوان: ${title}`}
-                    class="form-control form__input input-user-firstname"
-                    readonly
+                    className="form-control form__input input-user-firstname"
+                    readOnly
                   />
                 </div>
 
-                <div class="form__box-input col-12 px-2">
-                  <span class="fa fa-users form__icon"></span>
+                <div className="form__box-input col-12 px-2">
+                  <span className="fa fa-users form__icon"></span>
 
                   <input
                     type="text"
                     name=""
                     value={` توضیحات: ${desc}`}
                     id="lastname"
-                    class="form-control form__input input-user-lastname"
-                    readonly
+                    className="form-control form__input input-user-lastname"
+                    readOnly
                   />
                 </div>
 
-                <div class="form__box-input col-12 px-2">
-                  <span class="fa fa-globe form__icon"></span>
+                <div className="form__box-input col-12 px-2">
+                  <span className="fa fa-globe form__icon"></span>
                   <input
                     lang="en"
                     type="email"
                     name=""
                     value={` تعداد بازدید : ${views}`}
                     id="email"
-                    class="form-control form__input input-user-email"
-                    readonly
+                    className="form-control form__input input-user-email"
+                    readOnly
                   />
                 </div>
 
-                <div class="form__box-input col-12 px-2">
-                  <span class="fa fa-key form__icon"></span>
+                <div className="form__box-input col-12 px-2">
+                  <span className="fa fa-key form__icon"></span>
                   <input
                     type="text"
                     name=""
                     id="text"
                     value={`گروهبندی: ${category}`}
-                    class="form-control form__input input-user-password"
-                    readonly
+                    className="form-control form__input input-user-password"
+                    readOnly
                   />
                 </div>
               </form>
             </div>
 
-            <div class="modal-footer">
+            <div className="modal-footer">
               <button
-                class="btn btn-danger btn-lg"
+                className="btn btn-danger btn-lg"
                 data-bs-dismiss="modal"
                 onClick={() => setIsShowModal(false)}
               >

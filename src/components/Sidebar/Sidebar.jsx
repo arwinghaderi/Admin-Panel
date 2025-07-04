@@ -1,26 +1,21 @@
-import React from "react";
+import React from 'react'
 
 export default function Sidebar() {
   return (
     <div class="col-10 col-md-3 sidebar mx-auto mx-md-0 px-0">
       <div class="sidebar-content">
-        <div class="card position-relative text-center">
-          <img
-            class="card-img-top sidebar__img-banner"
-            src="../../img/admin/banner/banner.png"
-            alt="banner admin photo"
-          />
+        <div class="card text-center">
           <div class="card-body">
-            <h4 class="card-title sidebar__top-name">محمدامین سعیدی راد</h4>
+            <h4 class="card-title sidebar__top-name"> آروین قادری </h4>
             <p class="card-text sidebar__top-email" lang="en">
-              توسعه دهنده جاوا اسکریپت
+              توسعه دهنده ری اکت
             </p>
             <ul class="list px-0">
               <li class="list__item">
                 <span class="fa fa-text-height"></span>
                 <p class="list__text mb-0">
-                  <span class="">نام کوچک</span>
-                  <span class="list__firstname">محمدامین</span>
+                  <span class="">نام </span>
+                  <span class="list__firstname">آروین</span>
                 </p>
               </li>
               <li class="list__item">
@@ -28,33 +23,20 @@ export default function Sidebar() {
 
                 <p class="list__text mb-0">
                   <span class="">نام خانوادگی</span>
-                  <span class="list__lastname">سعیدی راد</span>
+                  <span class="list__lastname"> قادری</span>
                 </p>
               </li>
               <li class="list__item">
                 <span class="fa fa-wallet"></span>
-
                 <p class="list__text mb-0">
-                  <span class="">تعداد دوره</span>
-                  <span class="list__course-count">35</span>
+                  <span class=""> سن</span>
+                  <span class="list__lastname"> 22</span>
                 </p>
               </li>
             </ul>
-            <button class="btn-custome btn-custome__blue btn-sidebar w-100">
-              تغییر اطلاعات
-              <span class="fa fa-pencil"></span>
-            </button>
-          </div>
-
-          <div class="sidebar__profile">
-            <img
-              src="../../img/admin/profile/banana.png"
-              alt="admin photo"
-              class="sidebar__img-profile"
-            />
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

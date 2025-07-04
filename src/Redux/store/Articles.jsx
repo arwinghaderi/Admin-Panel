@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import Swal from 'sweetalert2'
 
 export const getArticlesFromServer = createAsyncThunk(
   'getArticlesFromServer/articles',
@@ -23,6 +24,34 @@ export const removeArticlesFromServer = createAsyncThunk(
   }
 )
 
+export const createArticlesFromServer = createAsyncThunk(
+  'articles/createUserFromServer',
+  async (articlesData) => {
+    const res = await fetch('https://redux-cms.iran.liara.run/api/articles/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(articlesData),
+    })
+
+    if (!res.ok) {
+      throw new Error('خطا در ایجاد مقاله')
+    }
+    if (res.ok) {
+      Swal.fire({
+        icon: 'success',
+        title: 'موفق!',
+        text: 'مقاله با موفقیت ثبت شد.',
+        confirmButtonText: 'خیلی خب',
+      })
+    }
+
+    const data = await res.json()
+    return data
+  }
+)
+
 const articlesSlice = createSlice({
   name: 'articles',
   initialState: [],
@@ -32,12 +61,13 @@ const articlesSlice = createSlice({
       return action.payload
     })
 
-    builder.addCase(removeArticlesFromServer.fulfilled, (state, action) => {
-      const newArticles = state.filter(
-        (article) => article._id !== action.payload.id
-      )
+    builder.addCase(createArticlesFromServer.fulfilled, (state, action) => {
+      console.log('action articles', action)
+      state.push(action.meta.arg)
+    })
 
-      return newArticles
+    builder.addCase(removeArticlesFromServer.fulfilled, (state, action) => {
+      return state.filter((article) => article._id !== action.payload.id)
     })
   },
 })
