@@ -14,7 +14,6 @@ export default function App() {
         <main class="main">
           <div class="row justify-content-between mx-0">
             <Sidebar />
-
             {router}
           </div>
         </main>
