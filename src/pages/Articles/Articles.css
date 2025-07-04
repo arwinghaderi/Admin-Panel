@@ -10,6 +10,7 @@
 .articles__tag-text {
   font-size: 1.2rem;
 }
+
 .articles {
   height: 72%;
   padding: 3rem;
@@ -19,8 +20,8 @@
 .new-article {
   display: flex;
   align-items: center;
-  padding-right: 3rem;
-  height: 15%;
+  padding: 1rem;
+  height: auto;
   background-color: var(--light);
 }
 
@@ -42,6 +43,7 @@
   font-size: 1.7rem;
   font-weight: bold;
 }
+
 .articles__short-desc {
   color: grey;
   font-size: 1.3rem;
@@ -92,8 +94,7 @@
   fill: currentColor;
 }
 
-#form-new-article
-  .fa:not(.icon-name-article, .icon-tags-article, .fa-photo-film) {
+#form-new-article .fa:not(.icon-name-article, .icon-tags-article, .fa-photo-film) {
   right: 5%;
 }
 
@@ -106,6 +107,7 @@
 .dark .articles__img {
   filter: brightness(60%);
 }
+
 .dark .articles__item:hover .articles__img {
   filter: brightness(100%);
 }
