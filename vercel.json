@@ -1,3 +1,4 @@
 {
+  "redirects": [{ "source": "/", "destination": "/users", "permanent": true }],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }

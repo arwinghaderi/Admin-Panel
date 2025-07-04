@@ -505,7 +505,7 @@ body {
   gap: 3rem;
   padding: 2rem;
   border-bottom: 1px solid var(--white-700);
-  height: 11.5%;
+  height:  fit-content;
 }
 
 .content__tab-link {
